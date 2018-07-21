@@ -9,7 +9,7 @@
   "license": "MIT",
   "preferGlobal": true,
   "keywords": [
-    "homebridge-plugin watchman ppcode"
+    "homebridge-plugin"
   ],
   "engines": {
     "node": ">=0.12.0",
