@@ -36,14 +36,16 @@ Watchman.prototype = {
   getCurrentTemperature: function (callback) {
     var that = this;
     that.log ("getting CurrentTemperature");
+    that.log ("URL: " + this.url);
 
     this.httpRequest(this.url, 'GET', function(error, response, body) {
       if (error) {
-        this.log('HTTP function failed: %s', error);
+        that.log('HTTP function failed: %s', error);
         callback(error);
       }
       else {
-        this.log('HTTP function succeeded - %s', body);
+        that.log('HTTP function succeeded - %s', body);
+        that.log('Parsed temp: ' + this.parseTemperature(body));
         callback(null, this.parseTemperature(body));
       }
     }.bind(this));
@@ -52,14 +54,16 @@ Watchman.prototype = {
   getCurrentRelativeHumidity: function (callback) {
     var that = this;
     that.log ("getting CurrentRelativeHumidity");
+    that.log ("URL: " + this.url);
 
     this.httpRequest(this.url, 'GET', function(error, response, body) {
       if (error) {
-        this.log('HTTP function failed: %s', error);
+        that.log('HTTP function failed: %s', error);
         callback(error);
       }
       else {
-        this.log('HTTP function succeeded - %s', body);
+        that.log('HTTP function succeeded - %s', body);
+        that.log('Parsed humidity: ' + this.parseHumidity(body));
         callback(null, this.parseHumidity(body));
       }
     }.bind(this));
