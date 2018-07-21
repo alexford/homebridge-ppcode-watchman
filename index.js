@@ -1,10 +1,12 @@
-const Service, Characteristic, request;
+var Service, Characteristic;
 
 module.exports = function (homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
   homebridge.registerAccessory("homebridge-ppcode-watchman", "PP Code Watchman", Watchman);
 };
+
+const request = require('request');
 
 function Watchman(log, config) {
   this.log = log;
