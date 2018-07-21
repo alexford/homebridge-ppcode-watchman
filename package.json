@@ -1,7 +1,7 @@
 {
   "name": "homebridge-ppcode-watchman",
   "description": "Homebridge plugin for the Person Place Code Watchman temperature/humidity sensor",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git://github.com/alexford/homebridge-ppcode-watchman.git"

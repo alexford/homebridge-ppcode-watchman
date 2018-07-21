@@ -85,7 +85,7 @@ Watchman.prototype = {
     informationService
       .setCharacteristic(Characteristic.Manufacturer, "Person Place Code")
       .setCharacteristic(Characteristic.Model, "Watchman")
-      .setCharacteristic(Characteristic.SerialNumber, this.config.product_id);
+      .setCharacteristic(Characteristic.SerialNumber, "XXXXXX");
     
     var temperatureService = new Service.TemperatureSensor();
     temperatureService
