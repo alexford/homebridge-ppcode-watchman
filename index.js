@@ -1,19 +1,16 @@
-var Service, Characteristic;
+const request = require('request');
 
 module.exports = function (homebridge) {
-  Service = homebridge.hap.Service;
-  Characteristic = homebridge.hap.Characteristic;
+  const Service = homebridge.hap.Service;
+  const Characteristic = homebridge.hap.Characteristic;
   homebridge.registerAccessory("homebridge-ppcode-watchman", "PP Code Watchman", Watchman);
 };
-
-const request = require('request');
 
 function Watchman(log, config) {
   this.log = log;
 
-  // device info
   this.host = config["host"];
-  this.product_id = config["product_id"];
+  this.product_id = config["product_id"]; // printed on bottom of Watchman
   this.url = "http://" + this.host + "/" + this.product_id + "&Stats";
 }
 
