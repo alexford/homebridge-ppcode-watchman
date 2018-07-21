@@ -14,7 +14,7 @@ function Watchman(log, config) {
   // device info
   this.host = config["host"];
   this.product_id = config["product_id"];
-  this.url = "http://" + this.host + "/" + this.product_id + "&stats";
+  this.url = "http://" + this.host + "/" + this.product_id + "&Stats";
 }
 
 Watchman.prototype = {
