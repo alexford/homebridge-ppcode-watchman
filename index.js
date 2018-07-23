@@ -65,7 +65,7 @@ Watchman.prototype = {
 
   parseTemperature: function(body) {
     // °C for HomeKit compatibility (converted back to °F in app)
-    return (parseFloat(body.match(/Temp:(\d{2}\.\d{2})/)[1]) - 32) / 1.8;
+    return (parseFloat(body.match(/Temp:(\d{2}\.?\d{0,2})/)[1]) - 32) / 1.8;
   },
 
   parseHumidity: function(body) {
